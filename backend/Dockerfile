@@ -26,7 +26,7 @@ COPY wait-for-it.sh wait-for-it.sh
 USER root
 RUN chmod +x wait-for-it.sh
 
-RUN chown -R /app backend
+RUN chown -R backend /app
 
 USER backend
 EXPOSE 8050
