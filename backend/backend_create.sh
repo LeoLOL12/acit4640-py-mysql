@@ -1,2 +1,2 @@
-envsubst < backend_template.conf > backend.conf
+envsubst < /app/src/backend_template.conf > /app/src/backend.conf
 exec "$@"
