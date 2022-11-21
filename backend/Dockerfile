@@ -10,13 +10,14 @@ WORKDIR /app
 
 # RUN wget -qq https://github.com/timoguic/acit4640-py-mysql/archive/refs/heads/master.zip -O /tmp/source.zip && unzip /tmp/source.zip && cp -r acit4640-py-mysql-master/backend /app/src && rm -rf acit4640-py-mysql-master
 
-RUN python -m pip install -r /backend/requirements.txt
+COPY ./backend /app/src
+RUN python -m pip install -r /app/src/requirements.txt
 
-WORKDIR /backend
+WORKDIR /app/src
 
 # create backend.conf
-COPY backend_template.conf /app/src/
-COPY backend_create.sh /app/src/
+COPY backend_template.conf /app/src
+COPY backend_create.sh /app/src
 USER root
 RUN chmod +x ./backend_create.sh
 
