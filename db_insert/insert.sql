@@ -1,0 +1,1 @@
+INSERT INTO item (name, bcit_id) VALUES ("Leo Li", "A01226711");

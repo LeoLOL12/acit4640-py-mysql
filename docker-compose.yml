@@ -4,7 +4,7 @@ version: '3'
 services:
   web:
     build:
-      context: nginx
+      context: frontend
     env_file:
       - variables.env
     ports:
@@ -12,8 +12,7 @@ services:
     depends_on:
       - db
   app:
-    build:
-      context: app
+    image: leolol481/demo4640:latest
     env_file:
       - variables.env
     depends_on:
