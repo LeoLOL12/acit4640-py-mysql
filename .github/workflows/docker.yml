@@ -22,6 +22,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          file: ./backend/Dockerfile
+          context: backend
+          # file: ./backend/Dockerfile
           push: true
           tags: leolol481/demo4640:latest
