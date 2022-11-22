@@ -10,7 +10,9 @@ WORKDIR /app
 
 # RUN wget -qq https://github.com/timoguic/acit4640-py-mysql/archive/refs/heads/master.zip -O /tmp/source.zip && unzip /tmp/source.zip && cp -r acit4640-py-mysql-master/backend /app/src && rm -rf acit4640-py-mysql-master
 
-COPY ./ /app/src
+# COPY ./ /app/src
+COPY ./requirements /app/src/requirements.txt
+
 RUN python -m pip install -r /app/src/requirements.txt
 
 WORKDIR /app/src
